@@ -33,8 +33,9 @@ class ImagineHelperTest extends TestCase
     public function setUp(): void
     {
         Router::reload();
-        Router::connect('/:controller/:action');
-        Router::connect('/:controller/:action/*');
+        $builder = Router::createRouteBuilder('/');
+        $builder->connect('/{controller}/{action}');
+        $builder->connect('/{controller}/{action}/*');
 
         Configure::write('Imagine.salt', 'this-is-a-nice-salt');
         $controller = null;

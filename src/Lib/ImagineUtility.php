@@ -110,7 +110,11 @@ class ImagineUtility
         // * https://stackoverflow.com/questions/37352371/php-exif-read-data-illegal-ifd-size
         // * https://bugs.php.net/bug.php?id=74956
         // phpcs:disable
-        $exif = @exif_read_data($imageFile);
+        if (function_exists('exif_read_data')) {
+            $exif = @\exif_read_data($imageFile);
+        } else {
+            $exif = false;
+        }
         // phpcs:enable
         if ($exif === false) {
             return null;

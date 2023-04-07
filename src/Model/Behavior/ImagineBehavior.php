@@ -124,7 +124,7 @@ class ImagineBehavior extends Behavior
             throw new InvalidArgumentException(sprintf($message, get_class($image)));
         }
 
-        $event = $this->getTable()->dispatchEvent(self::BEFORE_APPLY_OPERATIONS, compact('image', 'operations'));
+        $event = $this->table()->dispatchEvent(self::BEFORE_APPLY_OPERATIONS, compact('image', 'operations'));
         if ($event->isStopped()) {
             return $event->getResult();
         }
@@ -135,7 +135,7 @@ class ImagineBehavior extends Behavior
             $data['image']
         );
 
-        $event = $this->getTable()->dispatchEvent(self::AFTER_APPLY_OPERATIONS, $data);
+        $event = $this->table()->dispatchEvent(self::AFTER_APPLY_OPERATIONS, $data);
         if ($event->isStopped()) {
             return $event->getResult();
         }
@@ -158,13 +158,13 @@ class ImagineBehavior extends Behavior
     protected function _applyOperations($operations, $image)
     {
         foreach ($operations as $operation => $params) {
-            $event = $this->getTable()->dispatchEvent(self::APPLY_OPERATIONS, compact('image', 'operations'));
+            $event = $this->table()->dispatchEvent(self::APPLY_OPERATIONS, compact('image', 'operations'));
             if ($event->isStopped()) {
                 continue;
             }
 
             if (method_exists($this->_table, $operation)) {
-                $this->getTable()->{$operation}($image, $params);
+                $this->table()->{$operation}($image, $params);
             } elseif (method_exists($this->_processor, $operation)) {
                 $this->_processor->{$operation}($params);
             } else {
