@@ -34,7 +34,7 @@ class ImagineBehavior extends Behavior
      *
      * @var array
      */
-    protected $_defaultConfig = [
+    protected array $_defaultConfig = [
         'engine' => 'Gd',
         'processorClass' => '\Burzum\Imagine\Lib\ImageProcessor',
     ];

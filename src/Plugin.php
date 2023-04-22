@@ -12,5 +12,5 @@ class Plugin extends BasePlugin
      *
      * @var string
      */
-    protected $name = 'Burzum/Imagine';
+    protected ?string $name = 'Burzum/Imagine';
 }

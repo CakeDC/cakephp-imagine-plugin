@@ -33,7 +33,7 @@ class ImagineComponent extends Component
      *
      * @var array
      */
-    protected $_defaultConfig = [
+    protected array $_defaultConfig = [
         'hashField' => 'hash',
         'checkHash' => true,
         'actions' => [],

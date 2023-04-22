@@ -23,7 +23,7 @@ class ImagineUtilityTest extends TestCase
      *
      * @var array
      */
-    public $fixtures = [];
+    protected array $fixtures = [];
 
     /**
      * testOperationsToString

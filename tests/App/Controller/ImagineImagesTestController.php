@@ -26,12 +26,12 @@ class ImagineImagesTestController extends Controller
     /**
      * @var string
      */
-    public $name = 'Images';
+    public string $name = 'Images';
 
     /**
      * @var array
      */
-    public $uses = ['Images'];
+    public array $uses = ['Images'];
 
     /**
      * Redirect url

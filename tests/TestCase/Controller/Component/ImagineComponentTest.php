@@ -17,6 +17,7 @@ use Cake\Core\Configure;
 use Cake\Http\Exception\NotFoundException;
 use Cake\Http\Response;
 use Cake\Http\ServerRequest as Request;
+use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
@@ -32,8 +33,8 @@ class ImagineComponentTest extends TestCase
      *
      * @var array
      */
-    public $fixtures = [
-        'plugin.Burzum\Imagine.Image',
+    protected array $fixtures = [
+        'plugin.Burzum\Imagine.Images',
     ];
 
     /**
@@ -54,7 +55,7 @@ class ImagineComponentTest extends TestCase
         Configure::write('Imagine.salt', 'this-is-a-nice-salt');
         $request = new Request();
         $response = new Response();
-        $this->Controller = new ImagineImagesTestController($request, $response);
+        $this->Controller = new ImagineImagesTestController($request, null, null, $response);
         $this->Controller->Imagine->Controller = $this->Controller;
     }
 

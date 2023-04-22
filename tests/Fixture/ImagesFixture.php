@@ -12,14 +12,14 @@ namespace Burzum\Imagine\Test\Fixture;
 
 use Cake\TestSuite\Fixture\TestFixture;
 
-class ImageFixture extends TestFixture
+class ImagesFixture extends TestFixture
 {
     /**
      * fields property
      *
      * @var array
      */
-    public $fields = [
+    public array $fields = [
         'id' => ['type' => 'integer'],
         'title' => ['type' => 'string', 'null' => false],
         '_constraints' => [
@@ -32,7 +32,7 @@ class ImageFixture extends TestFixture
      *
      * @var array
      */
-    public $records = [
+    public array $records = [
         ['title' => 'First Image'],
         ['title' => 'Second Image'],
     ];

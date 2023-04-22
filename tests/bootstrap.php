@@ -6,6 +6,7 @@ declare(strict_types=1);
  */
 
 use Cake\Core\Plugin;
+use function Cake\Core\env as cakeEnv;
 
 $findRoot = function ($root) {
     do {
@@ -31,3 +32,8 @@ Plugin::getCollection()
       ->add(new \Burzum\Imagine\Plugin([
           'path' => dirname(dirname(__FILE__)) . DS,
       ]));
+
+if (cakeEnv('FIXTURE_SCHEMA_METADATA')) {
+	$loader = new Cake\TestSuite\Fixture\SchemaLoader();
+	$loader->loadInternalFile(cakeEnv('FIXTURE_SCHEMA_METADATA'));
+}

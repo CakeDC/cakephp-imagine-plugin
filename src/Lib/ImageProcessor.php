@@ -32,7 +32,7 @@ class ImageProcessor
      *
      * @var array
      */
-    protected $_defaultConfig = [
+    protected array $_defaultConfig = [
         'engine' => 'Gd',
     ];
 
