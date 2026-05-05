@@ -5,7 +5,7 @@ namespace Burzum\Imagine;
 
 use Cake\Core\BasePlugin;
 
-class Plugin extends BasePlugin
+class ImaginePlugin extends BasePlugin
 {
     /**
      * Plugin name.
