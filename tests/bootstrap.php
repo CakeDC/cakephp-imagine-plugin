@@ -29,7 +29,7 @@ $loader = require $root . '/vendor/autoload.php';
 $loader->setPsr4('Cake\\', './vendor/cakephp/cakephp/src');
 $loader->setPsr4('Cake\Test\\', './vendor/cakephp/cakephp/tests');
 Plugin::getCollection()
-      ->add(new \Burzum\Imagine\Plugin([
+      ->add(new \Burzum\Imagine\ImaginePlugin([
           'path' => dirname(dirname(__FILE__)) . DS,
       ]));
 
